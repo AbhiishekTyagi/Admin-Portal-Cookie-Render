@@ -6,11 +6,11 @@ import cookieParser from "cookie-parser";
 import connectDB from "./utils/db.js";
 import errorMiddleware from "./middlewares/error-middlewares.js";
 const app=express();
-const port =12300;
+const port =process.env.Port;
 
 // Handling the cors issues
 const corsOptions = {
-    origin: "http://localhost:5173",
+    origin: "https://admin-portal-cookie-vercel-gxtv.vercel.app/",
     method: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"],
     credentials: true,
   };
