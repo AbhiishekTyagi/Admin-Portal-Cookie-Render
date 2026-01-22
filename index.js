@@ -34,6 +34,10 @@ app.use("/api/admin",adminrouter);
 app.use(errorMiddleware);
 
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 //Start the server
 connectDB().then(()=>
 {
