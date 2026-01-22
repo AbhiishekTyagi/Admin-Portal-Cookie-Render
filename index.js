@@ -6,12 +6,12 @@ import cookieParser from "cookie-parser";
 import connectDB from "./utils/db.js";
 import errorMiddleware from "./middlewares/error-middlewares.js";
 const app=express();
-const port =process.env.Port;
+const Port =process.env.Port;
 
 // Handling the cors issues
 const corsOptions = {
-    origin: "https://admin-portal-cookie-vercel-gxtv.vercel.app/",
-    method: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"],
+    origin: "https://admin-portal-cookie-vercel-gxtv.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"],
     credentials: true,
   };
 app.use(cors(corsOptions));
@@ -29,19 +29,18 @@ app.use("/api/users",router);
 //Mount the admin router
 app.use("/api/admin",adminrouter);
 
-
-// Using the error Handling middleware mount using the use() method
-app.use(errorMiddleware);
-
-
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
+
+// Using the error Handling middleware mount using the use() method
+app.use(errorMiddleware);
+
 //Start the server
 connectDB().then(()=>
 {
-app.listen(port,()=>{
+app.listen(Port,()=>{
     console.log(`Server is running on ${port}`);
 })
 });
