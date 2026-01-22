@@ -1,0 +1,7 @@
+# .gitignore (Admin Porta Cookies)
+node_modules/
+.env
+.DS_Store
+dist/
+.vscode/
+package-lock.json
