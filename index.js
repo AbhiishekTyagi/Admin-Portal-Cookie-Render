@@ -41,6 +41,6 @@ app.use(errorMiddleware);
 connectDB().then(()=>
 {
 app.listen(Port,()=>{
-    console.log(`Server is running on ${port}`);
+    console.log(`Server is running on ${Port}`);
 })
 });
